@@ -1,25 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% njuthesis 示例模板 v1.4.3 2025-05-21
-% https://github.com/nju-lug/NJUThesis
-%
-% 贡献者
-% Yu XIONG @atxy-blip   Yichen ZHAO @FengChendian
-% Song GAO @myandeg     Chang MA @glatavento
-% Yilun SUN @HermitSun  Yinfeng LIN @linyinfeng
-% Yukai Chou @Muzimuzhi
-%
-% 许可证
-% LaTeX Project Public License（版本 1.3c 或更高）
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%---------------------------------------------------------------------
-% 一些提升使用体验的小技巧：
-%   1. 请务必使用 UTF-8 编码编写和保存本文档
-%   2. 请务必使用 XeLaTeX 或 LuaLaTeX 引擎进行编译
-%   3. 不保证接口稳定，写作前一定要留意版本号
-%   4. 以百分号(%)开头的内容为注释，可以随意删除
-%---------------------------------------------------------------------
-
 %---------------------------------------------------------------------
 % 请先阅读使用手册：
 % http://mirrors.ctan.org/macros/unicodetex/latex/njuthesis/njuthesis.pdf
@@ -38,13 +16,16 @@
     % draft,                  % 开启草稿模式
     % anonymous,              % 开启盲审模式
     % minimal,                % 开启最小化模式
+    draft,
     %
     %   单双面模式，默认为适合印刷的双面模式
     % oneside,                % 单面模式，无空白页
     % twoside,                % 双面模式，每一章从奇数页开始
-    %
+    oneside,
     %   字体设置，不填写则自动调用系统预装字体，详见手册
-    fontset = win % |mac|macoffice|fandol|none,
+    %fontset = win % win|mac|macoffice|fandol|none,
+    cjk-font = win,
+    latin-font = none,
   ]{njuthesis}
 
 % 模板选项设置，包括个人信息、外观样式等
@@ -58,7 +39,40 @@
 % \usepackage[version=4]{mhchem} % 绘制分子式
 % \usepackage{listings} % 展示代码
 % \usepackage{algorithm,algorithmic} % 展示算法伪代码
-
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\usepackage{booktabs}
+%\usepackage{expex}
+%\lingset{
+%    aboveglftskip=0pt,
+%    belowglpreambleskip=0pt,
+%    belowpreambleskip=-5pt,
+%    extraglskip=0pt,
+%    Everyex={\parskip=0pt},
+%    textoffset=!1.3em,
+%    glspace=1em,
+%    everygla={},
+%    everyglb=\footnotesize,
+%    aboveglbskip=-.2ex,
+%}
+\usepackage{langsci-gb4e}
+\usepackage[tone]{tipa}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{pxrubrica}
+\newfontfamily\tang[Path=font/]{Tangut+N4694+V3.005.ttf}
+\newcommand{\Tangut}[1]{{\tang\upshape #1}}
+\newfontfamily\tibe[Path=font/]{ctrc-bt.ttf}
+\newcommand{\tib}[1]{{\tibe\upshape #1}}
+\setmainfont[
+  Path=font/,
+  UprightFont = TIMES.TTF,
+  BoldFont    = Timesbd.ttf,
+  ItalicFont  = Timesi.ttf,
+  BoldItalicFont = Timesbi.ttf
+]{Times New Roman}
 % 在导言区随意定制所需命令
 % \DeclareMathOperator{\spn}{span}
 % \NewDocumentCommand\mathbi{m}{\textbf{\em #1}}
@@ -114,13 +128,12 @@
 %   \include{chapters/introduction}
 %   \include{chapters/environments}
 
-\chapter{引言}
-
-\section{量子计算}
-
-John Preskill 认为我们现在处于“含噪声的中型量子时代”。\cite{preskill2018}
-量子位的不稳定性和有限的量子比特数量限制了量子计算机的复杂度和纠错能力。
-
+\include{chapters/introduction}
+\include{chapters/syllable_structure}
+\include{chapters/onset}
+\include{chapters/rime}
+\include{chapters/tone}
+\include{chapters/process}
 %---------------------------------------------------------------------
 %	参考文献
 %---------------------------------------------------------------------
