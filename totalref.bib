@@ -216,18 +216,6 @@
   year    =  1999
 }
 
-@ARTICLE{Kaland2023-pa,
-  title     = "Contour {Clustering}: {A} {Field-data-driven} {Approach} for
-               {Documenting} and {Analysing} {Prototypical} {F0} {Contours}",
-  author    = "Kaland, Constantijn",
-  journal   = "J. Int. Phon. Assoc.",
-  publisher = "Cambridge University Press",
-  volume    =  53,
-  number    =  1,
-  pages     = "159--188",
-  year      =  2023
-}
-
 @ARTICLE{Sun2000-gc,
   title   = "Parallelisms in the verb morphology of {Sidaba} {rGyalrong} and
              {Lavrung} in {rGyalrongic}",
@@ -389,13 +377,14 @@
 }
 
 @ARTICLE{Bird1994-hr,
-  title   = "One-level {Phonology}: {Autosegmental} {Representations} and
-             {Rules} as {Finite} {Automata}",
-  author  = "Bird, Steven and Ellison, T Mark",
-  journal = "Computational Linguistics",
+  title   = "One-level {phonology}: {Autosegmental} {representations} and
+             {rules} as {finite} {automata}",
+  author  = "Bird, Steven and Mark Ellison, T",
+  journal = "CL",
   volume  =  20,
   number  =  1,
   pages   = "55--90",
+  month   =  mar,
   year    =  1994
 }
 
@@ -434,16 +423,6 @@
   author    = "Nagano, Yasuhiko",
   publisher = "Kyuko Shoin",
   year      =  2018
-}
-
-@ARTICLE{Cotterell2015-mm,
-  title   = "Modeling {Word} {Forms} {Using} {Latent} {Underlying} {Morphs} and
-             {Phonology}",
-  author  = "Cotterell, Ryan and Peng, Nanyun and Eisner, Jason",
-  journal = "Trans. Assoc. Comput. Linguist.",
-  volume  =  3,
-  pages   = "433--447",
-  year    =  2015
 }
 
 @ARTICLE{Von_Rosthorn1897-du,
@@ -727,5 +706,69 @@
                family.",
   month     =  jan,
   year      =  2026,
+  language  = "en"
+}
+
+@ARTICLE{Cotterell2015-mm,
+  title     = "Modeling {word} {forms} {using} {latent} {underlying} {morphs}
+               and {phonology}",
+  author    = "Cotterell, Ryan and Peng, Nanyun and Eisner, Jason",
+  journal   = "Trans. Assoc. Comput. Linguist.",
+  publisher = "MIT Press - Journals",
+  volume    =  3,
+  pages     = "433--447",
+  abstract  = "The observed pronunciations or spellings of words are often
+               explained as arising from the “underlying forms” of their
+               morphemes. These forms are latent strings that linguists try to
+               reconstruct by hand. We propose to reconstruct them automatically
+               at scale, enabling generalization to new words. Given some
+               surface word types of a concatenative language along with the
+               abstract morpheme sequences that they express, we show how to
+               recover consistent underlying forms for these morphemes, together
+               with the (stochastic) phonology that maps each concatenation of
+               underlying forms to a surface form. Our technique involves loopy
+               belief propagation in a natural directed graphical model whose
+               variables are unknown strings and whose conditional distributions
+               are encoded as finite-state machines with trainable weights. We
+               define training and evaluation paradigms for the task of surface
+               word prediction, and report results on subsets of 7 languages.",
+  month     =  dec,
+  year      =  2015,
+  language  = "en"
+}
+
+@ARTICLE{Kaland2023-pa,
+  title     = "Contour {clustering}: {A} {field-data-driven} {approach} for
+               {documenting} and {analysing} {prototypical} {f0} {contours}",
+  author    = "Kaland, Constantijn",
+  journal   = "J. Int. Phon. Assoc.",
+  publisher = "Cambridge University Press (CUP)",
+  volume    =  53,
+  number    =  1,
+  pages     = "159--188",
+  abstract  = "ABSTRACTThis paper reports an automatic data-driven analysis for
+               describing prototypical intonation patterns, particularly
+               suitable for initial stages of prosodic research and language
+               description. The approach has several advantages over traditional
+               ways to investigate intonation, such as the applicability to
+               spontaneous speech, language- and domain-independency, and the
+               potential of revealing meaningful functions of intonation. These
+               features make the approach particularly useful for language
+               documentation, where the description of prosody is often lacking.
+               The core of this approach is a cluster analysis on a time-series
+               of f0 measurements and consists of two scripts (Praat and R,
+               available
+               fromhttps://constantijnkaland.github.io/contourclustering/).
+               Graphical user interfaces can be used to perform the analyses on
+               collected data ranging from spontaneous to highly controlled
+               speech. There is limited need for manual annotation prior to
+               analysis and speaker variability can be accounted for. After
+               cluster analysis, Praat textgrids can be generated with the
+               cluster number annotated for each individual contour. Although
+               further confirmatory analysis is still required, the outcomes
+               provide useful and unbiased directions for any investigation of
+               prototypical f0 contours based on their acoustic form.",
+  month     =  apr,
+  year      =  2023,
   language  = "en"
 }
