@@ -16,7 +16,6 @@
     % draft,                  % 开启草稿模式
     % anonymous,              % 开启盲审模式
     % minimal,                % 开启最小化模式
-    draft,
     %
     %   单双面模式，默认为适合印刷的双面模式
     % oneside,                % 单面模式，无空白页
@@ -27,7 +26,16 @@
     cjk-font = win,
     latin-font = none,
   ]{njuthesis}
-
+\njusetup[bib]{style = author-year,
+    option = {
+    doi = false,
+    isbn = false,
+    url = false,
+    eprint = false,
+    gbtype = false,
+    gbnamefmt = familyahead
+    }
+}
 % 模板选项设置，包括个人信息、外观样式等
 % 较为冗长且一般不需要反复修改，我们把它放在单独的文件里
 \input{njuthesis-setup.def}
@@ -73,6 +81,7 @@
   ItalicFont  = Timesi.ttf,
   BoldItalicFont = Timesbi.ttf
 ]{Times New Roman}
+\setsansfont{Noto Sans}[Ligatures=TeX]
 % 在导言区随意定制所需命令
 % \DeclareMathOperator{\spn}{span}
 % \NewDocumentCommand\mathbi{m}{\textbf{\em #1}}
@@ -103,9 +112,9 @@
 % 生成目录
 \tableofcontents
 % 生成图片清单
-% \listoffigures
+\listoffigures
 % 生成表格清单
-% \listoftables
+\listoftables
 
 %---------------------------------------------------------------------
 %	正文部分
@@ -146,7 +155,9 @@
 %---------------------------------------------------------------------
 
 \begin{acknowledgement}
-  感谢 \href{https://git.nju.edu.cn/nju-lug/lug-introduction}{LUG@NJU}。
+  %
+  %感谢我的导师孙凯老师。在这两年，无论是田野调查的机会还是论文写作，他都尽心竭力地支持、指导我。
+  %
 \end{acknowledgement}
 
 %---------------------------------------------------------------------
@@ -163,10 +174,7 @@
 
 % 附录部分使用单独的字母序号
 \appendix
-
-% 可以在这里插入补充材料
-\chapter{正文中涉及的数据及源代码}
-\dots
+\include{appendix/wordlist}
 
 % 完工
 \end{document}
