@@ -49,7 +49,8 @@
 % \usepackage{listings} % 展示代码
 % \usepackage{algorithm,algorithmic} % 展示算法伪代码
 \usepackage{float}
-\usepackage{enumitem}
+\usepackage{enumitem,multicol}
+\usepackage{subcaption}
 \usepackage{tikz}
 \usepackage{tikz-qtree}
 \usepackage{booktabs}
@@ -131,13 +132,6 @@
 %   \item[DMRG] 密度矩阵重正化群 (Density-Matrix Reformation-Group)
 % \end{notation}
 
-% 建议将论文内容拆分为多个文件
-% 即新建一个 chapters 文件夹
-% 把每一章的内容单独放入一个 .tex 文件
-% 然后在这里用 \include 导入，例如
-%   \include{chapters/introduction}
-%   \include{chapters/environments}
-
 \include{chapters/introduction}
 \include{chapters/syllable_structure}
 \include{chapters/onset}
@@ -156,9 +150,21 @@
 %---------------------------------------------------------------------
 
 \begin{acknowledgement}
-  %
-  %感谢我的导师孙凯老师。在这两年，无论是田野调查的机会还是论文写作，他都尽心竭力地支持、指导我。
-  %
+  感谢我的导师孙凯老师。2024年时，我尚在迷茫中，不知道自己可以做些什么。那时我只是向老师提出了想要调查一门嘉绒语组语言的想法，老师就尽心竭力地帮助、支持我，使我能够实践自己不成熟的想法。在论文写作中，老师也不遗余力指导和修改。深深感谢老师的无私付出。
+
+  感谢我的语言老师翁真卓玛和她的家人们。独在异乡田野调查，是他们关心我的生活起居。感谢桑吉措学姐介绍我到她的家乡。没有他们的善良和热情就不可能有我的这篇论文。
+  
+  感谢我的西夏语和藏语老师马洲洋博士，他的课程是我进入汉藏语研究的门径。感谢我的梵语老师般灯法师。
+  
+  在美国俄勒冈大学参加LSA Summer Institute期间，Scott DeLancey、Thomas Payne、Nathaniel Sims教授曾关心论文写作并提出指导意见；本文的部分章节和想法也曾通过邮件和Jesse Gates、林幼菁、赖云帆教授交流，感谢他们的诚恳的建议和热忱的鼓励。在爱尔兰都柏林圣三一学院参加SSATH期间，和同样研究嘉绒语组的李上、李瑞瑶、周涵宇同学交流过田野调查心得和各自调查点的现象，感谢他们的启发。感谢崔立晗同学对本文地理学方面内容的帮助。
+
+  感谢所有愿意开放数据和知识获取的人们，感谢所有开源社区的参与者。在这个时代，是你们让我的学习和写作免去许多世俗的困扰。
+  
+  感谢我的好朋友：刘海宁、张德懿、潘楚皓、蔡铠汶、赵博然、孙欣悦、房祎宁、张睿、高磊、张祁于暄、周同冏。感谢Kevinz和他的音乐。大学四年的成长过程中幸得他们的陪伴，“那令我坚信，世界终究不会将我们淹没”。
+
+  感恩我的家人们：我的父母、姐姐、外婆。尤其要感谢我的父母资助我完成学业、照顾并包容我的生活。在大学，我经历了人生中第一次至亲的离去，希望我的外公在天之灵可以安息，也希望他可以原谅我没能见上他的最后一面。
+
+  在这四年，
 \end{acknowledgement}
 
 %---------------------------------------------------------------------

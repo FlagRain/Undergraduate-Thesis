@@ -1,45 +1,29 @@
-\chapter{声调}
+\chapter{声调}\label{chaptertone}
+
+在嘉绒语组中，东部嘉绒语组的四土嘉绒语、草登嘉绒语、日部嘉绒语是声调语言，而茶堡嘉绒语则没有声调对立\cite{Lin-2016-da}。对四土嘉绒语诸方言声调的系统研究，以\textcite{hsieh1999theoretical}为开始，提出四土嘉绒语卓克基话存在词调和音高重音的混合系统；\textcite{lin2012no}在此基础上提出卓克基话存在一个缺性声调（privative tone）系统，其底层是降调和零声调的对立，而在表层展现为词末音节降调和高低调的对立；且根据底层声调可以确定表层声调的表现。在这个分析框架下，\textcite{Lin-2016-da}对小金话的声调系统也进行了分析。但在这些音系学的分析之外，讨论四土嘉绒语声调表现的语音学、尤其是实验语音学工作仍然有限。
 
 \section{表层声调}
 
 米亚罗话在表层有高调、低调、降调三个声调，以五度标调法标示音值分别为[44]、[11]、[51]。本文将这三个声调分别记为[H]、[L]、[HL]。
 
-米亚罗话名词在单音节时仅呈现两个调值：[H]和[HL]。为了展现平均基频轮廓，本文对于收集到的80个单音节名词的声调，采用了\textcite{kaland2023contour}的基频轮廓聚类工具；它采用了无监督机器学习中的层次聚类方法，首先使用Praat和TextGrid测量和标注80组单音节词汇录音的基频后，通过欧几里得距离计算簇相似度，迭代计算相似簇并合并，最终得到树状图如图\ref{den}。
+米亚罗话名词在单音节时仅呈现两个调值：[H]和[HL]。为了检验声调类别是否能在不预先输入标签的情况下从轮廓本身被识别出来，本文对82个单音节词音频的二十点归一化F0曲线进行了Ward层次聚类，并分别比较2簇、3簇、4簇切分。2簇切分中一个簇包含48个[H]调和4个[HL]调，另一个簇包含3个[H]调和27个[HL]调，ARI为0.683，纯度为0.915。3簇切分中，第一簇共有52个词汇，其中48个是人工标注的[H]调；第二簇共有24个词汇，其中22个是[HL]调；第三簇共有6个词汇，其中5个也是[HL]调；这一切分与人工标注调类之间的列联表仍显著（$\chi^2=54.96$, $p=1.17\times10^{-12}$），ARI为0.636，纯度同为0.915。4簇切分，虽然列联表仍显著（$\chi^2=55.01$, $p=6.85\times10^{-12}$），但ARI降至0.372。图 \ref{fig:clusters} 展示了三簇切分下的聚类树状图和各簇的平均轮廓。由此可见，即使不输入人工标签，米亚罗话的单音节基频轮廓也会自发分成“高平”与“下降”两大类。
 
-\begin{figure}[H]
+\begin{figure}
 \centering
-\includegraphics[width=0.8\textwidth]{img/dendrogram.png}
-\caption{基频轮廓聚类树状图}
-\label{den}
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{img/tone_cluster_dendrogram.png}
+  \caption{层次聚类树状图}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.48\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{img/tone_cluster_means.png}
+  \caption{各簇平均轮廓}
+\end{subfigure}
+\caption{单音节 F0 轮廓的无监督聚类结果}
+\label{fig:clusters}
 \end{figure}
-
-将簇数设置为3时，得到聚类获得的基频轮廓如图\ref{f0}。
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{img/plot_3.png}
-\caption{基频轮廓}
-\label{f0}
-\end{figure}
-
-其中簇1、2、3与人工标注的声调[H]、[HL]的对应如列联表\ref{toneclus}所示。
-
-\begin{table}[H]
-    \vspace{5pt}
-    \centering
-    \caption{声调-聚类簇列联表}
-    \label{toneclus}
-\begin{tabular}{c|ccc}
-   \toprule
-    \textit{} & 簇1 & 簇2 & 簇3 \\
-    \midrule
-  H & 25 & 25 & 0  \\
-  HL & 1  & 10 & 19 \\
-   \bottomrule
-\end{tabular}
-\end{table}
-
-高调[H]样本主要集中于簇1和簇2，降调[HL]的样本集中在簇3，少部分分布在簇2。在“聚类结果与声调相互独立”的原假设下计算得到的期望频数与观测频数差异显著，$\chi ^{2}(2) = 45.42$，对应的显著性水平为$p = 1.37\times 10^{-10} \lll  0.001$。由此可见，聚类结果与声调之间存在高度相关性。
 
 根据聚类结果和人工测量的基频，可以得出米亚罗话[H]调基频大约在210-240Hz之间，[HL]调基频大约从240-270Hz下降到150-180Hz。
 
@@ -65,7 +49,7 @@
 
 \section{底层声调}
 
-正如\textcite{hsieh1999theoretical}和\textcite{lin2012no}所论证的，四土嘉绒语卓克基话的表层声调系统是可预测的。林幼菁指出卓克基话存在一个缺性声调（privative tone）系统，其底层是降调和零声调的对立，而在表层展现为词末音节降调和高低调的对立；且根据底层声调可以确定表层声调的表现。在米亚罗话中，底层同样存在词末音节降调和零声调的对立。本文采用V标示词末音节为零声调，V̂标示词末音节为降调。
+正如\textcite{hsieh1999theoretical}和\textcite{lin2012no}所论证的，四土嘉绒语卓克基话的表层声调系统是可预测的。林幼菁指出卓克基话存在一个缺性声调（privative tone）系统，其底层是降调和零声调的对立，而在表层展现为词末音节降调和高低调的对立；且根据底层声调可以确定表层声调的表现。在米亚罗话中，底层同样存在词末音节降调和零声调的对立。
 
 米亚罗话的零声调和降调的对立具有词汇辨义作用，如表\ref{tonex}所示。
 
@@ -97,7 +81,7 @@
     \item 默认低调：剩余不带声调的音节指派低调[L]。
 \end{enumerate}
 
-相较于卓克基话的声调生成规则（\cite{lin2012no}），米亚罗话的的主要区别是弱化音步操作会对所有的单音节生效，而非卓克基话仅对非词首音节生效。
+相较于卓克基话的声调生成规则\cite{lin2012no}，米亚罗话的的主要区别是弱化音步操作会对所有的单音节生效，而非卓克基话仅对非词首音节生效。
 
 调型(a)的的规则使用顺序是：音步分解（左）、音步分解（右）、弱化音步、强制高调、插入高调、默认低调。如下例：
 
