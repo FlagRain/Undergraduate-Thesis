@@ -1,0 +1,130 @@
+\chapter{核心算法与代码}
+
+本文采用Python程序进行部分音系的形式化分析以及声学的计算处理。本附录将其中较为核心的代码整理如下。
+
+\section{音频切分与基频提取}
+
+声调的声学分析首先从音频中找到主要语音段，去掉开头和结尾的静音，再提取有声基频点。程序使用短时RMS估计语音边界，通过Parselmouth调用Praat的pitch算法。随后将不规则的有声基频点插值为固定长度的轮廓。
+
+\begin{lstlisting}[caption={基频提取与轮廓插值},label={lst:audio}]
+def frame_rms(y, frame_length, hop_length):
+    if len(y) < frame_length:
+        y = numpy.pad(y, (0, frame_length - len(y)))
+    n_frames = 1 + max(0, (len(y) - frame_length) // hop_length)
+    frames = numpy.stack(
+        [y[i * hop_length : i * hop_length + frame_length] for i in range(n_frames)]
+    )
+    return numpy.sqrt(numpy.mean(frames ** 2, axis=1) + 1e-12)
+
+
+def speech_bounds(y, sr):
+    frame_length = max(int(sr * 0.025), 1)
+    hop_length = max(int(sr * 0.005), 1)
+    rms = frame_rms(y, frame_length, hop_length)
+    if len(rms) >= 5:
+        rms = numpy.convolve(rms, numpy.ones(5) / 5, mode="same")
+
+    threshold = max(float(rms.max()) * 0.08, float(numpy.median(rms)) * 1.5)
+    active = numpy.where(rms > threshold)[0]
+    if len(active) == 0:
+        return 0, len(y)
+
+    start = max(int(active[0] * hop_length), 0)
+    end = min(int(active[-1] * hop_length + frame_length), len(y))
+    return start, end
+
+
+def sound_from_array(y, sr):
+    return parselmouth.Sound(y.astype(float), sampling_frequency=sr)
+
+
+def voiced_pitch(sound, floor=70.0, ceiling=450.0):
+    pitch = sound.to_pitch(time_step=0.005, pitch_floor=floor, pitch_ceiling=ceiling)
+    values = pitch.selected_array["frequency"]
+    times = numpy.array([pitch.get_time_from_frame_number(i + 1) for i in range(len(values))])
+    mask = values > 0
+    return times[mask], values[mask]
+
+
+def interpolate_contour(times, values, duration, points=20):
+    if len(values) < 4 or duration <= 0:
+        return None
+    grid = numpy.linspace(0.0, duration, points)
+    return numpy.interp(grid, times, values)
+\end{lstlisting}
+
+\section{声调统计检验和机器学习}
+
+声调分析的统计检验包括描述统计、显著性检验、效应量计算、聚类、分类。代码\ref{lst:tonestats}列出统计表和机器学习分类的算法，\ref{lst:toneclus}列出基频轮廓聚类的算法。
+
+\begin{lstlisting}[caption={统计检验与机器学习分类},label={lst:tonestats}]
+def cohen_d(a, b):
+    pooled = math.sqrt(
+        ((len(a) - 1) * a.var(ddof=1) + (len(b) - 1) * b.var(ddof=1))
+        / (len(a) + len(b) - 2)
+    )
+    if pooled == 0:
+        return float("nan")
+    return float((a.mean() - b.mean()) / pooled)
+
+
+def acoustic_tests(tone_table, metrics):
+    rows = []
+    for metric in metrics:
+        tone1 = tone_table.loc[tone_table["final_tone"] == "1", metric].dropna()
+        tone2 = tone_table.loc[tone_table["final_tone"] == "2", metric].dropna()
+        welch_t, welch_p = scipy.stats.ttest_ind(tone1, tone2, equal_var=False)
+        mw_u, mw_p = scipy.stats.mannwhitneyu(tone1, tone2, alternative="two-sided")
+        rows.append(
+            {
+                "metric": metric,
+                "tone1_mean": float(tone1.mean()),
+                "tone2_mean": float(tone2.mean()),
+                "welch_p": float(welch_p),
+                "mann_whitney_p": float(mw_p),
+                "cohen_d": cohen_d(tone1.to_numpy(), tone2.to_numpy()),
+            }
+        )
+    return pandas.DataFrame(rows)
+
+
+def tone_classifier(tone_table, feature_columns):
+    data = tone_table.dropna(subset=["final_tone"]).copy()
+    x = data[feature_columns]
+    y = data["final_tone"].astype(str)
+
+    model = sklearn.pipeline.Pipeline(
+        [
+            ("imputer", sklearn.impute.SimpleImputer(strategy="median")),
+            ("scaler", sklearn.preprocessing.StandardScaler()),
+            ("classifier", sklearn.linear_model.LogisticRegression(max_iter=1000)),
+        ]
+    )
+    folds = sklearn.model_selection.StratifiedKFold(
+        n_splits=5, shuffle=True, random_state=2026
+    )
+    predicted = sklearn.model_selection.cross_val_predict(model, x, y, cv=folds)
+    return sklearn.metrics.accuracy_score(y, predicted), predicted
+\end{lstlisting}
+
+\begin{lstlisting}[caption={基频轮廓的层次聚类与一致性检验},label={lst:toneclus}]
+def cluster_tables(tone):
+    subset = tone[tone["pitch_contour_json"].notna()].copy()
+    matrix = np.vstack(subset["pitch_contour_json"].apply(
+        lambda v: np.array(json.loads(v), dtype=float)))
+
+    linkage_matrix = linkage(matrix, method="ward", metric="euclidean")
+    subset["cluster"] = fcluster(linkage_matrix, 3, criterion="maxclust")
+
+    crosstab = pd.crosstab(subset["cluster"], subset["final_tone"])
+    chi2, p_value, dof, _ = chi2_contingency(crosstab)
+
+    stats_summary = {
+        "chi_square": float(chi2),
+        "p_value": float(p_value),
+        "degrees_of_freedom": int(dof),
+        "adjusted_rand_index": float(
+            adjusted_rand_score(subset["final_tone"], subset["cluster"])),
+    }
+    return subset, crosstab, stats_summary
+\end{lstlisting}

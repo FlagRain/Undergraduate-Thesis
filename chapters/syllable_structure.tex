@@ -8,10 +8,10 @@
         [.音节
             [.（声母） 
                 [.（冠音） ]
-                [.（首位） ]
-                [.（中间位） ]
+                [.（首音） ]
+                [.（介音） ]
              ]
-            [.韵基
+            [.韵母 
                 [.韵核 ]
                 [.（韵尾） ]
              ]
@@ -20,7 +20,9 @@
 \end{center}
 
 \noindent
-其中，声母和韵尾均可不出现。音节结构模式为(C$_{1}$)(C$_{2}$)(C$_{3}$)V(C$_{4}$)(C$_{5}$)：元音（即韵核（nucleus））前最多允许三个辅音（即声母（onset），其中C$_{1}$为冠音（preinitial）、C$_{2}$为首位（initial）、C$_{3}$为中间位（medial））、元音后最多允许两个辅音（即韵尾（coda））。最复杂的音节结构为CCCVCC，例如 /zɡroks/ “手镯”。
+其中，声母和韵尾均可不出现。音节结构模式为(C$_{1}$)(C$_{2}$)(C$_{3}$)V(C$_{4}$)(C$_{5}$)(C$_{6}$)：元音（即韵核（nucleus））前最多允许三个辅音（即声母（onset），其中C$_{1}$为冠音（preinitial）、C$_{2}$为首音（initial）、C$_{3}$为介音（medial））、元音后最多允许三个辅音（即韵尾（coda））。
+
+米亚罗话的词干中出现的最复杂的音节结构为CCCVCC，例如 /zɡroks/ “手镯”。
 
 \begin{center}
     \begin{tikzpicture}
@@ -28,38 +30,63 @@
         [.音节
             [.声母 
                 [.冠音 z ]
-                [.首位 ɡ ]
-                [.中间位 r ]
+                [.首音 ɡ ]
+                [.介音 r ]
              ]
-            [.韵基
+            [.韵母 
                 [.韵核 o ]
                 [.韵尾 ks ]
             ]
         ]
     \end{tikzpicture}
 \end{center}
-
 \noindent
-正如\textcite[47]{jacques2021grammar}对茶堡嘉绒语的判断，因为复杂的辅音簇，米亚罗话也不可能列出所有可能的音节。因此本文的分析同样只会分别分析声母和韵母。
+词干中可以出现的所有音节结构如表\ref{systr}所示：
+
+\begin{table}[H]
+\vspace{5pt}
+    \centering
+    \caption{米亚罗话音节结构列表}
+    \label{systr}
+\begin{tabular}{ccc}
+\toprule
+音节结构   & 例词        & 释义 \\
+\midrule
+CV     & pe        & 鸡  \\
+CCV    & ʃtɕi      & 10 \\
+CVC    & zom       & 桥  \\
+CCCV   & mbro      & 马  \\
+CCVC   & smân     & 药  \\
+CVCC   & ta-jips   & 影子 \\
+CCCVC  & kə-skrîn & 长的 \\
+CCVCC  & pʰjaks    & 磕头 \\
+CCCVCC & zɡroks    & 手镯 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+除此之外，在米亚罗话中还存在分布较为边缘的零声母音节以及三辅音韵尾音节。零声母音节详见\ref{zero}小节；三辅音韵尾主要通过形态学过程生成，详见\ref{codacom}小节。
+
+正如\textcite[47]{jacques2021grammar}对茶堡嘉绒语的判断，因为复杂的辅音簇，不可能列出米亚罗话所有可能的音节。因此本文的分析同样只会分别分析声母和韵母。
 
 \section{部分重叠} \label{reduplication}
 
-嘉绒语组下许多语言中都存在部分重叠的现象，例如\textcite{jacques2021grammar}描写了在茶堡话的动词和部分名词中存在的部分重叠，分为声母重叠和韵母重叠，其中声母重叠的构造方式是在原音节前插入一个滋生音节；\textcite{lai2017grammaire}在俄热话中观察到的部分重叠构造则是滋生音节作为后缀附着在原音节，即词的最后一个音节之后。
+嘉绒语组下许多语言中都存在部分重叠的现象，例如\textcite{jacques2021grammar}描写了茶堡话的动词和部分名词中的部分重叠，分为声母重叠和韵母重叠，其中声母重叠的构造方式是在原音节前插入一个滋生音节；\textcite{lai2017grammaire}在俄热话中观察到的部分重叠构造则是滋生音节作为后缀附着在原音节，即词的最后一个音节之后。
 
-米亚罗话中观察到的部分重叠现象在构造上与茶堡话的声母重叠相似，都是将滋生音节插入到原音节之前。米亚罗话的部分重叠指的是照原样复制单音节并改变其韵母部分的音系过程。具体构造方式为：对于词的最后一个音节$\sigma$，删除其韵尾部分形成滋生音节$\sigma'$，再将$\sigma'$插入到$\sigma$之前，形成新的音节序列$\sigma'\sigma$。例如：
+米亚罗话中的部分重叠现象在构造上与茶堡话的声母重叠相似，都是将滋生音节插入到原音节之前。米亚罗话的部分重叠指的是照原样复制单音节并改变其韵母部分的音系过程。具体构造方式为：对于词的最后一个音节$\sigma$，删除其韵尾部分形成滋生音节$\sigma'$，再将$\sigma'$插入到$\sigma$之前，形成新的音节序列$\sigma'\sigma$。例如：
 
 \begin{exe}
 \ex kəmbrô “高的” $\rightarrow$ kəmbrombrô \\
-\gll kə- mbro- mbrô \\
+\gll kə- {mbro\textasciitilde} mbrô \\
      $\sigma_{1}$ $\sigma_{2}'$ $\sigma_{2}$ \\
 \end{exe}
 
 \begin{exe}
 \ex kənpjôk “软的” $\rightarrow$ kənpjonpjôk \\
-\gll kə- npjo- npjôk \\
+\gll kə- {npjo\textasciitilde} npjôk \\
      $\sigma_{1}$ $\sigma_{2}'$ $\sigma_{2}$ \\
 \end{exe}
 
-米亚罗话的部分重叠在形容词中相当能产，即使是在借词中也能应用。例如[kə-xɐw]“好的”就有重叠形式[kə-xɐ-xɐ̂w]。形容词之外，部分名词，尤其是一些方位、时间名词和量词也存在部分重叠现象。动词可以观察到一些部分重叠的形式，但其已经相当词汇化，例如[kɐ-nɐ-wze-wzet]“犹豫”，其理论上对应的无重叠形式*[kɐ-nɐwzet]并不存在。
+米亚罗话的部分重叠在形容词中相当能产，即使是在借词中也能应用。例如[kə-xɐw]“好的”就有重叠形式[kə-xɐ\textasciitilde xɐ̂w]。形容词之外，部分名词，尤其是一些方位、时间名词和量词也存在部分重叠现象。动词可以观察到一些部分重叠的形式，但其已经相当词汇化，例如[kɐ-nɐ-wze\textasciitilde wzet]“犹豫”，其理论上对应的无重叠形式*[kɐ-nɐwzet]并不存在。
 
-部分重叠因为会完整重复词末音节的声母部分，因此可以用来测试音节歧义（ambisyllabicity）。例如[kə-nejnə̂]“内向的”，虽然看似有[kə-ne.jnə̂]和[kə-nej.nə̂]两种音节划分方式，但观察其重叠形式[kə-ne-jnə-jnə̂]可以发现其最末音节的声母应当是/jn/，因此音节划分只能是[kə-ne.jnə̂]。
+部分重叠因为会完整重复词末音节的声母部分，因此可以用来测试音节歧义（ambisyllabicity）。例如[kə-nejnə̂]“内向的”，虽然看似有[kə-ne.jnə̂]和[kə-nej.nə̂]两种音节划分方式，但观察其重叠形式[kə-ne-jnə\textasciitilde jnə̂]可以发现其最末音节的声母应当是/jn/，因此音节划分只能是[kə-ne.jnə̂]。

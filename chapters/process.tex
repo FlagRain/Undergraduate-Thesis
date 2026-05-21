@@ -1,1 +1,157 @@
+\chapter{与亲属语言的比较}
 
+\section{词汇相似度的计算}
+
+\textcite{lai2023lexical}整理了用于计算和历史比较的嘉绒语组语言同源词词表，其中包括291项概念。本文使用词表中的四土嘉绒语白湾话、马尔康话、脚木足话，以及茶堡嘉绒语的词汇材料进行词汇相似度的计算。\footnote{本小节使用的\textcite{lai2023lexical}数据库中的词汇，引用自\textcite{Jacques2016-bp}（茶堡嘉绒语）、\textcite{Zhang2020-ya}（四土嘉绒语白湾话）、\textcite{prins2011web}（四土嘉绒语脚木足话）、\textcite{Huang1992}（四土嘉绒语马尔康话）。本章其他小节也使用了\textcite{Nagano2013-hy}（四土嘉绒语梭磨话）、\textcite{Lin-2016-dr}（四土嘉绒语卓克基话）、\textcite{Gong2018-aw}（日部嘉绒语）的词汇数据。}
+
+对于词表中的概念，有271项可以对应到米亚罗话的词汇。本文对相似度的定义为：若两个形式分别为$x$和$y$，莱文斯坦距离为$d(x,y)$，相似度S(x,y)为
+
+\[
+S(x,y)=1-\frac{d(x,y)}{\max(|x|,|y|)}
+\]
+
+表\ref{simtomyaglo}列出了各语言点与米亚罗话的平均相似度。可以看到，在三个四土嘉绒语方言中，米亚罗话与马尔康话的词汇相似度最高（0.512），其次是脚木足话（0.435），与白湾话的表层相似度最低（0.338）；而作为外群的茶堡嘉绒语相似度明显更低（0.231）。
+
+\begin{table}[H]
+\vspace{5pt}
+    \centering
+    \caption{各语言点与米亚罗话的词汇相似度}
+    \label{simtomyaglo}
+\begin{tabular}{lccc}
+\toprule
+语言点 & 所属 & 计算词数 & 平均相似度 \\
+\midrule
+马尔康话 & 四土嘉绒语 & 228 & 0.512 \\
+脚木足话 & 四土嘉绒语 & 220 & 0.435 \\
+白湾话   & 四土嘉绒语 & 268 & 0.338 \\
+茶堡嘉绒语   & 东部嘉绒语组 & 270 & 0.231 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+四个四土嘉绒语方言两两之间的相似度矩阵如表\ref{simmatrix}所示。这一格局与\textcite{gates2014situ}基于互通度和方言学调查得出的结论大体吻合：米亚罗话处在四土嘉绒语中东部方言区与南部方言区的交界处，在词汇上靠近以马尔康话为代表的中部方言。
+
+\begin{table}[H]
+\vspace{5pt}
+    \centering
+    \caption{四土嘉绒语方言的词汇相似度矩阵}
+    \label{simmatrix}
+\begin{tabular}{lcccc}
+\toprule
+       & 米亚罗话 & 白湾话 & 马尔康话 & 脚木足话 \\
+\midrule
+米亚罗话 & ---   & 0.338 & 0.512 & 0.435 \\
+白湾话   & 0.338 & ---   & 0.434 & 0.445 \\
+马尔康话 & 0.512 & 0.434 & ---   & 0.494 \\
+脚木足话 & 0.435 & 0.445 & 0.494 & ---   \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{重要音系特征的比较}
+
+\subsection{声母}
+
+正如第\ref{charonset}章所描写的，米亚罗话的声母保留了丰富的复辅音。这一特征在四土嘉绒语各方言中是共有的。表\ref{clusterretention}列举了若干带复辅音声母的词汇，可以看到/mŋ-/、/mbr-/、/spj-/、/zd-/、/skr-/、/mkr-/等辅音簇在四个方言中整齐对应、几乎原样保留，茶堡嘉绒语也大体一致。
+
+\begin{table}[H]
+\vspace{5pt}
+    \centering
+    \caption{四土嘉绒语方言中的复辅音声母}
+    \label{clusterretention}
+\begin{tabular}{lllllll}
+\toprule
+释义 & 米亚罗话 & 白湾话 & 马尔康话 & 脚木足话 & 茶堡嘉绒语 \\
+\midrule
+五 & kə-mŋu      & kəmŋɐj    & kə mŋo    & kəmŋi      & kɯmŋu \\
+高 & kə-mbro     & mbro      & kə mbro   & kəmbro     & mbro \\
+长 & kə-skrin    & skrēn     & kə skrᴇn  & kəskriʔn   & zri \\
+狼 & spjaŋkə     & spjaŋkə   & spjɑŋ kə  & spjankə    & spjaŋkɯ \\
+云 & zdem        & zdiəm     & zdᴇm      & zdeʔm      & zdɯm \\
+横 & kə-ŋa-mkrak & o-mkrāk   & kɑ mkrɑk  & kəŋamkrak  & ndom \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textcite{Gong2018-aw}将四土嘉绒语分为“去鼻冠音”（deprenasalization）类型和“弱化”（leniting）类型。对于古单辅音清爆发音声母，去鼻冠音方言会保留清爆发音，而弱化方言会发生浊化；对于古鼻冠音声母，去鼻冠音方言会去鼻化甚至擦音化，而弱化方言则会保留鼻冠音。表\ref{deprelen}比较了典型的弱化方言白湾话、典型的去鼻冠方言卓克基话和米亚罗话的一些词汇。可以看出，米亚罗话更接近去鼻冠方言。
+
+\begin{table}[H]
+\vspace{5pt}
+    \centering
+    \caption{四土嘉绒语去鼻冠音和弱化方言的比较}
+    \label{deprelen}
+\begin{tabular}{l|lll}
+\toprule
+          & 米亚罗话     & 卓克基话   & 白湾话       \\
+\midrule
+给   & ka-wu    & ka-wə  & ka-ⁿbi    \\
+变老 & kə-waj   & kə-wi  & ka-ⁿbɐj   \\
+聋子      & tɐ-wo    & ta-wo  & ta-ⁿbo    \\
+衣服     & tə-wâ   & tə-wa  & tə-ⁿga    \\
+蛋       & ta-gam   & ta-gam & ta-ⁿgəm   \\
+吃    & ka-ze    & ka-za  & ka-ⁿdziɛ̂ \\
+脸      & ta-jû   & ta-jo  & ta-ɟɐ̂    \\
+羊     & kəjo     & kə.jo  & kə.ɟók    \\
+儿子       & tə-tse   & tə-tsa & tə-ziɛ̂   \\
+10       & ʃtɕi     & ɕtɕiɛ  & zɟé       \\
+面粉     & ta-pet   & ta-pat & ta-viɛ́t  \\
+雪      & ta-jpêt & ta-jpa & ta-jviɛ̂  \\
+做    & ka-pe    & ka-pa  & ka-viɛ̂   \\
+头      & ta-ku    & ta-ko  & ta-wo    \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{韵母}
+
+米亚罗话韵尾位置可以出现/-p, -t, -k, -s/等辅音；从同源词看，米亚罗常保留口腔闭塞韵尾，而脚木足话常在韵尾前出现喉塞成分，茶堡和日部嘉绒语中则常见/-ʁ, -β, -v, -ʔ/等擦音、喉塞音韵尾。表\ref{tab:coda-comparison}列出了部分词汇。
+
+\begin{table}[H]
+	\centering
+	\caption{亲属语言的韵尾辅音}
+	\label{tab:coda-comparison}
+	\vspace{5pt}
+	\begin{tabular}{llllll}
+		\toprule
+		释义 & 米亚罗话 & 白湾话 & 脚木足话 & 茶堡嘉绒语 & 日部嘉绒语\\
+		\midrule
+		眼睛 & tə-mɲɐk & tə-mɲāk & təmɲaʔk & tɯ-mɲaʁ & ɐ-mɲɐ̂ʁ\\
+		手 & tɐ-jɐ̂k & ta-jāk & tajiʔk & tɯ-jaʁ & tə-jɐ̂ʁ\\
+		猪 & pɐk & piāk & pak &  paʁ & pɐ̂ʁ\\
+		妻子 & tɐ-rʒep1 & ta-rɟēp & tarɟaʔp & tɤ-rʑaβ & və-rɟev\\
+		山羊 & tsʰut1 & tɕhə̂ & tʃhət & tshɤt & tsɯtɑ\\
+		七 & kə-ʃnəs2 & kəɕnɐ̄s & kəʃnəʔs & kɯɕnɯz & kɯsnɑz\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+茶堡嘉绒语[tɯ-mɲaʁ]“眼睛”、[tɯ-jaʁ]“手”、[paʁ]“猪”和日部嘉绒语[ɐ-mɲɐ̂ʁ]、[tə-jɐ̂ʁ]、[pɐ̂ʁ]都用小舌擦音对应米亚罗、白湾和脚木足的[-k]。而“妻子”一词，茶堡嘉绒语[tɤ-rʑaβ]和日部嘉绒语[və-rɟev]则用双唇和唇齿擦音对应米亚罗话的[-p]。这可能说明茶堡和日部嘉绒语的韵尾爆发音有弱化倾向。
+
+对于韵尾的复辅音，四土嘉绒语中除了米亚罗话之外，目前仅在白湾话和梭磨话中发现了词末复辅音。其中白湾话的词末复辅音仅限于动词发生论元标记的形态学过程时可以产生\cite{zhang2016phonologie}，词干的韵尾位置不允许出现复辅音。而梭磨话和米亚罗话一样允许在词干位置出现复辅音。表\ref{clustercoda}列出了米亚罗话中的词干复辅音词汇在白湾话、卓克基话、梭磨话、茶堡嘉绒语中的对应词。
+
+\begin{table}[H]
+\vspace{5pt}
+    \centering
+    \caption{四土嘉绒语方言中的复辅音韵尾}
+    \label{clustercoda}
+\begin{tabular}{lllllll}
+\toprule
+释义 & 米亚罗话 & 白湾话 & 卓克基话 & 梭磨话 & 茶堡嘉绒语 \\
+\midrule
+影子 & ta-jips      & tajəs    & tajəp̚    & tajəps      & taʁjɯβ \\
+手镯 & zgrôks     & ---      & zgruk   & sgroks     & zgroʁ \\
+灰尘 & ta-jleps    & ---     & tilap̚  & tajpops   & --- \\
+暗的 & kə-rniks     & kərȵis   & kərȵəp̚  & kərȵəps  & 	qanɯ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{小结}
+
+综合本文前面各章的描写与本章的比较，米亚罗话作为四土嘉绒语东南端的一个方言，其音系既体现了嘉绒语组共有的形态—音系复杂性，又呈现出区别于其他方言的特征。本节就米亚罗话的音系类型作如下总结。
+
+第一，从保守性来看，米亚罗话较为完整地保留了复辅音系统与韵尾辅音系统。声母方面，米亚罗话允许最多三个辅音组成的复辅音簇，可析出冠音、首音、介音三个位置；调查所得的146种复辅音类型与白湾话、马尔康话、脚木足话乃至茶堡嘉绒语对应较为整齐，表明嘉绒语组特征性的复辅音系统在米亚罗话中得到较为完整保留。韵尾方面，米亚罗话保留了/-p, -t, -k/等爆发音韵尾，与茶堡嘉绒语和日部嘉绒语的韵尾擦音化倾向（/-ʁ, -β, -v/）形成对照。此外，米亚罗话允许/-ms, -ks, -ps, -ŋs/四种复辅音韵尾出现于词干位置，这一特征在四土嘉绒语方言中较为少见，可能展现与白湾话、卓克基话等方言不同的保守性。
+
+第二，从创新性来看，米亚罗话属于\textcite{Gong2018-aw}所论的去鼻冠音方言：古单辅音清爆发音声母在米亚罗话中保留清爆发音而未浊化，古鼻冠音声母则去鼻化甚至擦音化。这一表现与卓克基话一致，而明显不同于以白湾话为代表的弱化方言。
+
+第三，从声调系统来看，米亚罗话与卓克基话、小金话一样，有着底层零声调与词末降调对立的缺性声调系统。实验语音学分析显示，其声调对立的核心声学相关物集中于词末音节的末端基频与基频斜率，而非起点高度或时长。

@@ -48,6 +48,15 @@
 
 音位/ə/存在音位变体[ə]、[ɤ]、[ɿ]。出现在软腭音的开音节词尾时为[ɤ]，例如[skɤ̂]“佛”、[tekʰɤ̂]“一万”、[tɑ-ŋɡɤ̂]“背部”、[kɐ-rŋɤ̂]“蹲”。出现在齿龈、龈后的擦音、塞擦音（即/s, z, ʃ, ʒ, ts, tsʰ, dz, tʃ, tʃʰ, dʒ/）后的开音节词尾时为[ɿ]，例如[tə-tʃɿ]“水”、[kə-tsɿ]“猴子”、[tsʰɿ]“野葱”、[tɐ-ʃɿ]“血”、[kɐ-ʒɿ]“告状”、[tə-dʒɿ̂]“皮肤”、[kɐ-zɿ]“管教”、[kɐ-sɿ]“倚靠”等。
 
+本文抽取了拥有元音稳定段的部分词汇录音，采用线性预测编码（LPC）估算F1和F2值。图\ref{f1f2}展示了各元音在F1/F2平面上的分布；小点为单个词表录音的估算值，大点为各音位均值。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{img/vowel_f1_f2.png}
+\caption{米亚罗话元音格局}
+\label{f1f2}
+\end{figure}
+
 \section{韵尾}
 
 在韵尾位置可以出现的辅音为/m, n, ŋ, p, t, k, s, r, w, j, ɲ, ʃ/，其中/ɲ, ʃ/仅作为形态音位出现。韵尾位置的辅音清浊中和。词干中能够出现的韵尾如表\ref{rhyme}所示。
@@ -77,23 +86,17 @@
 
 \begin{exe}
 \ex kəktsej “小的/年轻的” $\rightarrow$ kəktsektsej \\
-\gll kə- ktse- ktsej \\
+\gll kə- {ktse\textasciitilde} ktsej \\
      $\sigma_{1}$ $\sigma_{2}'$ $\sigma_{2}$ \\
 \end{exe}
 
 \begin{exe}
 \ex kəxɐw “好的” $\rightarrow$ kəxɐxɐw \\
-\gll kə- xɐ- xɐw \\
+\gll kə- {xɐ\textasciitilde} xɐw \\
      $\sigma_{1}$ $\sigma_{2}'$ $\sigma_{2}$ \\
 \end{exe}
 
-
-
-\subsection{在韵尾位置的复辅音}
-
-米亚罗话在词干的韵尾位置允许出现复辅音，同时一些形态学过程也会产生复辅音韵尾。
-
-米亚罗话词干中能够出现的复辅音韵尾有/ms/、/ks/、/ps/、/ŋs/，例如表\ref{comcoda}所示。
+米亚罗话在词干的韵尾位置允许出现复辅音/ms, ks, ps, ŋs/，例如表\ref{comcoda}所示。
 
 \begin{table}[H]
 \vspace{5pt}
@@ -112,4 +115,262 @@
 \end{tabular}
 \end{table}
 
-目前观察到，米亚罗话形态过程能够生成的复辅音韵尾有/nɲ/、/mɲ/、/ŋɲ/、/nʃ/、/mʃ/、/ŋʃ/、/kʃ/、/pʃ/、/wj/、/kj/、/js/、/mjs/、/jps/。
+\subsection{形态过程中的韵尾复辅音}\label{codacom}
+
+同时，米亚罗话的形态过程也会产生其他复辅音韵尾。目前观察到，米亚罗话形态过程能够生成的复辅音韵尾有/nɲ/、/mɲ/、/ŋɲ/、/nʃ/、/mʃ/、/ŋʃ/、/kʃ/、/pʃ/、/wj/、/kj/、/js/、/mjs/、/pjs/。和白湾话观察到的现象类似，这些复辅音韵尾都是在人称索引的形态过程中生成的\cite[68-69]{zhang2016phonologie}。
+
+人称索引是一种动词形态句法系统，通过在动词上附着人称形式标记小句的核心论元\cite{Haspelmath2013-mu}。四土嘉绒语的动词形态存在人称索引的现象，现有研究已经描写了卓克基话\cite{Lin-2016-dr}、白湾话\cite{Zhang2018-qm,Zhang2020-ya}、脚木足话\cite{prins2011web}、沙石多话\cite{Sun2015-ss}。米亚罗话同样也存在一套完整的人称索引系统。
+
+以开音节不及物动词/ka-nə̂/“坐着”为例，米亚罗话的人称索引系统如表\ref{perindex}：
+
+\begin{table}[H]
+\vspace{5pt}
+    \centering
+    \caption{米亚罗话的人称和数（不及物动词）}
+    \label{perindex}
+\begin{tabular}{c|ccc}
+\toprule
+    & 后缀  & 举例               & 注释   \\
+\midrule
+1ꜱɢ & -ŋ  & ŋo nə̂-ŋ         & 我坐着  \\
+2ꜱɢ & -n  & no ko-nə̂-n      & 你坐着  \\
+3ꜱɢ &     & wujo nə̂         & 他坐着  \\
+1ᴅᴜ & -ʃ  & ndʒə nə̂-ʃ       & 我俩坐着 \\
+2ᴅᴜ & -ʃ  & ndʒo ko-nə̂-ʃ    & 你俩坐着 \\
+3ᴅᴜ & -nʃ & wujo-ndʒə nə̂-nʃ & 他俩坐着 \\
+1ᴘʟ & -j  & jo nə̂-j         & 我们坐着 \\
+2ᴘʟ & -ɲ  & ɲo ko-nə̂-ɲ      & 你们坐着 \\
+3ᴘʟ & -ɲ  & wujo-ɲî nə̂-ɲ   & 他们坐着\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+当动词可以携带多个论元时，米亚罗话采用正向—反向系统，通过共情层级来决定动词携带哪个论元的标记\cite{DeLancey1981-pq,Zuniga2002-yv,Jacques2014-pu}。但无论是及物动词或不及物动词，所使用的人称索引后缀均只有表\ref{perindex}中的那些，因此本文在此不赘述米亚罗话多论元情况下的人称索引系统。
+
+当动词是闭音节时添加人称索引后缀/ŋ, n, ɲ, j, ʃ, nʃ/，其韵尾会产生一系列音系过程，最终产出新的韵尾。本文以/ka-pʰâk/“砍”、/ka-lât/“写”、/ka-tup/“打”、/ka-ndûn/“读”、/ka-rwâs/“起床”、/ka-wzaps/“注意”、/ka-nəpjâms/“烤火”七个动词为例，描写在/-k, -t, -p, -n, -s, -ps, -ms/韵尾的动词后添加人称索引后缀时，新的韵尾的生成过程。
+
+\subsubsection{/-k/韵尾动词}
+
+以/ka-pʰâk/“砍”为例，/-k/韵尾动词主要经历省略和同化两种音系过程。如表\ref{kcodapro}所示：
+
+\begin{table}[H]
+\vspace{5pt}
+    \centering
+    \caption{/-k/韵尾音系过程}
+    \label{kcodapro}
+\begin{tabular}{c|ccccc}
+\toprule
+    & 底层形式 & 表层形式 & 涉及的音系过程 & 例子                      & 释义     \\
+\midrule
+-ŋ  & -kŋ     & -ŋ   & 省略      & ŋo ɕi ko-pʰâ-ŋ         & 我砍柴。   \\
+-n  & -kn     & -k   & 省略      & no ɕi na-pʰâk          & 你砍了柴。  \\
+-ɲ  & -kɲ     & -ŋɲ  & 同化      & ɲo ɕi na-pʰâ-ŋɲ        & 你们砍了柴。 \\
+-j  & -kj     & -kj  &         & əɲî ɕi ko-pʰâk-j      & 我们砍柴。  \\
+-ʃ  & -kʃ     & -kʃ  &         & ndʒə ɕi kə-pʰâk-ʃ      & 我们俩砍柴。 \\
+-nʃ & -knʃ    & -ŋʃ  & 同化      & wujo-ndʒə ɕi kə-pʰâ-ŋʃ & 他们俩砍柴。\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{/-t/韵尾动词}
+
+以/ka-lât/“写”为例，/-t/韵尾动词主要经历省略和同化两种音系过程。如表\ref{tcodapro}所示：
+
+\begin{table}[H]
+\vspace{5pt}
+    \centering
+    \caption{/-t/韵尾音系过程}
+    \label{tcodapro}
+\begin{tabular}{c|ccccc}
+\toprule
+    & 底层形式 & 表层形式 & 涉及的音系过程 & 例子                      & 释义     \\
+\midrule
+-ŋ  & -tŋ     & -n   & 省略、同化   & ŋo ta-stɕu ti-lâ-n             & 我写字。   \\
+-n  & -tn     & -t   & 省略      & no ta-stɕu ti-na-lât           & 你写了字。  \\
+-ɲ  & -tɲ     & -nɲ  & 同化      & ɲo ta-stɕu na-lâ-nɲ            & 你们写了字。 \\
+-j  & -tj     & -j   & 省略      & əɲî ta-stɕu lâ-j              & 我们写字。  \\
+-ʃ  & -tʃ     & -ʃ   & 省略      & ndʒə ta-stɕu lâ-ʃ              & 我们俩写字。 \\
+-nʃ & -tnʃ    & -nʃ  & 省略      & wujo-ndʒə ta-stɕu a-nə-w-lâ-nʃ & 他们俩写字。\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{/-p/韵尾动词}
+
+以/ka-tup/“打”为例，/-p/韵尾动词主要经历省略和同化两种音系过程。如表\ref{pcodapro}所示：
+
+\begin{table}[H]
+\vspace{5pt}
+    \centering
+    \caption{/-p/韵尾音系过程}
+    \label{pcodapro}
+\begin{tabular}{c|ccccc}
+\toprule
+    & 底层形式 & 表层形式 & 涉及的音系过程 & 例子                      & 释义     \\
+\midrule
+-ŋ  & -pŋ  & -m   & 省略、同化   & ŋo to-m         & 我打。   \\
+-n  & -pn  & -p   & 省略      & no te-tup       & 你打！   \\
+-ɲ  & -pɲ  & -mɲ  & 同化      & ɲo te-to-mɲ     & 你们打！  \\
+-j  & -pj  & -wj  & 同化      & əɲî to-wj      & 我们打。  \\
+-ʃ  & -pʃ  & -pʃ  &         & ndʒə to-pʃ      & 我们俩打。 \\
+-nʃ & -pnʃ & -mʃ  & 省略、同化   & wujo-ndʒə to-mʃ & 他们俩打。\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{/-n/韵尾动词}
+
+以/ka-ndûn/“读”为例，/-n/韵尾动词主要经历省略的音系过程。如表\ref{ncodapro}所示：
+
+\begin{table}[H]
+\vspace{5pt}
+    \centering
+    \caption{/-n/韵尾音系过程}
+    \label{ncodapro}
+\begin{tabular}{c|ccccc}
+\toprule
+    & 底层形式 & 表层形式 & 涉及的音系过程 & 例子                      & 释义     \\
+\midrule
+-ŋ  & -nŋ  & -n   & 省略      & ŋo ndûn                   & 我读。   \\
+-n  & -nn  & -n   & 省略      & no na-ndûn                & 你读了。  \\
+-ɲ  & -nɲ  & -nɲ  &         & ɲo na-ndûn-ɲ               & 你们读了。 \\
+-j  & -nj  & -j   & 省略      & əɲî ndû-j                 & 我们读。  \\
+-ʃ  & -nʃ  & -ʃ   & 省略      & ndʒə-kə ndô-ʃ              & 我们俩读。 \\
+-nʃ & -nnʃ & -nʃ  & 省略      & wujo-ndʒə-kə a-nə-w-ndûn-ʃ & 他们俩读。\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{/-s/韵尾动词}
+
+以/ka-rwâs/“起床”为例，/-s/韵尾动词主要经历省略、同化、换位三种音系过程。如表\ref{scodapro}所示：
+
+\begin{table}[H]
+\vspace{5pt}
+    \centering
+    \caption{/-s/韵尾音系过程}
+    \label{scodapro}
+\begin{tabular}{c|ccccc}
+\toprule
+    & 底层形式 & 表层形式 & 涉及的音系过程 & 例子                      & 释义     \\
+\midrule
+-ŋ  & -sŋ  & -ŋs  & 换位      & ŋo kə-rwâ-ŋs        & 我起床。   \\
+-n  & -sn  & -s   & 省略      & no te-rwâs          & 你起来！   \\
+-ɲ  & -sɲ  & -js  & 换位、同化   & ɲo te-tə-rwâjs      & 你们起来！  \\
+-j  & -sj  & -js  & 换位      & əɲî te-rwê-js      & 我们起来！  \\
+-ʃ  & -sʃ  & -ʃ   & 省略      & ndʒə te-rwê-ʃ       & 我们俩起来！ \\
+-nʃ & -snʃ & -nʃ  & 省略      & wujo-ndʒə ta-rwâ-nʃ & 他们俩起床。\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{/-ps/韵尾动词}
+
+以/ka-wzaps/“注意”为例，/-ps/韵尾动词主要经历省略、同化、换位三种音系过程。如表\ref{pscodapro}所示：
+
+\begin{table}[H]
+\vspace{5pt}
+    \centering
+    \caption{/-ps/韵尾音系过程}
+    \label{pscodapro}
+\begin{tabular}{c|ccccc}
+\toprule
+    & 底层形式 & 表层形式 & 涉及的音系过程 & 例子                      & 释义     \\
+\midrule
+-ŋ  & -psŋ  & -ms  & 换位、同化   & ŋo kə-wza-ms        & 我注意。   \\
+-n  & -psn  & -ps  & 省略      & no te-wzaps         & 你注意！   \\
+-ɲ  & -psɲ  & -mjs & 换位、同化   & ɲo te-wza-mjs       & 你们注意！  \\
+-j  & -psj  & -pjs & 换位      & əɲî kə-wza-pjs     & 我们注意。  \\
+-ʃ  & -psʃ  & -pʃ  & 省略      & ndʒə wzap-ʃ         & 我们俩注意。 \\
+-nʃ & -psnʃ & -mʃ  & 省略、同化   & wujo-ndʒə te-wza-mʃ & 他们俩注意！\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{/-ms/韵尾动词}
+
+以/ka-nəpjâms/“烤火”为例，/-ms/韵尾动词主要经历省略、同化、异化、换位四种音系过程。如表\ref{mscodapro}所示：
+
+\begin{table}[H]
+\vspace{5pt}
+    \centering
+    \caption{/-ms/韵尾音系过程}
+    \label{mscodapro}
+\begin{tabular}{c|ccccc}
+\toprule
+    & 底层形式 & 表层形式 & 涉及的音系过程 & 例子                      & 释义     \\
+\midrule
+-ŋ  & -msŋ  & -ms  & 省略      & ŋo kə-nəpjâms         & 我烤火。   \\
+-n  & -msn  & -ms  & 省略      & no ko-nəpjâms         & 你烤火。   \\
+-ɲ  & -msɲ  & -mjs & 换位、异化   & ɲo ko-nəpjâm-js       & 你们烤火。  \\
+-j  & -msj  & -pjs & 换位、同化   & əɲî nəpjâ-pjs        & 我们烤火。  \\
+-ʃ  & -msʃ  & -mʃ  & 省略      & ndʒə ko-nəpjâm-ʃ      & 我们俩烤火。 \\
+-nʃ & -msnʃ & -mʃ  & 省略      & wujo-ndʒə tə-nəpjâm-ʃ & 他们俩烤火。\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{形态—音系过程的形式分析}
+
+对于上文涉及的诸多形态—音系过程，本节将其纳入生成音系学的有序规则推导框架\parencite{Chomsky1968-sp,hayes2011introductory}加以统一刻画。本文假定：每一屈折形式都对应一个由词干韵尾与人称索引后缀线性拼接而成的底层形式，底层形式经一组带有外在排序的改写规则逐条施用，最终导出表层形式。每条规则写作 $A\rightarrow B\;/\;C\,\rule[2pt]{1em}{0.4pt}\,D$，意为成分 $A$ 在环境 $C\,\rule[2pt]{1em}{0.4pt}\,D$ 中实现为 $B$，且规则对整条线性表达同时施用\parencite{Chomsky1968-sp}。本文为米亚罗话复辅音韵尾的派生构造了如下八条规则：
+
+\begin{enumerate}
+    \item[P1] \textbf{2\textsc{sg}后缀删除}：2\textsc{sg}后缀/n/在任何辅音韵尾之后删除。该规则只作用于2\textsc{sg}这一特定词缀：
+    \[ \text{n}_{2\textsc{sg}}\rightarrow\emptyset\ \;/\;\ \text{C}\,\rule[2pt]{1em}{0.4pt}\,]_{\sigma} \]
+    \item[P2] \textbf{/j/前韵尾调整}：在1\textsc{pl}后缀/j/前，齿龈非延续音/t, n/删除、双唇爆发音/p/弱化为滑音/w/、软腭爆发音/k/不变。三种结果共享同一环境：
+    \[ \{\,\text{t, n}\rightarrow\emptyset,\ \ \text{p}\rightarrow\text{w},\ \ \text{k}\rightarrow\text{k}\,\}\ \;/\;\ \rule[2pt]{1em}{0.4pt}\,\text{j} \]
+    \item[P3] \textbf{咝音换位}：词干韵尾咝音/s/与紧邻其后的响音$\mathrm{X}_{[+\text{son}]}$互换线性次序\footnote{换位是一类有标记的线性重组操作，在类型学上多见于咝音与响音相邻的语境\parencite{blevins2004evolution,hume2004indeterminacy}。}：
+    \[ \text{s}\ \mathrm{X}_{[+\text{son}]}\ \rightarrow\ \mathrm{X}_{[+\text{son}]}\ \text{s} \]
+    \item[P4] \textbf{爆发音鼻化}：爆发音在鼻音前同化为与原爆发音同部位的鼻音\footnote{鼻化保留原发音部位，可视为后接鼻音的[$+$nasal]自主音段向左扩展、而发音部位节点不变\parencite{clements1995internal}。}：
+    \[ \begin{bmatrix}-\text{son}\\[-1pt]-\text{cont}\end{bmatrix}\rightarrow[+\text{nasal}]\ \;/\;\ \rule[2pt]{1em}{0.4pt}\,[+\text{nasal}] \]
+    即/p, t, k/在鼻音前分别变为/m, n, ŋ/。
+    \item[P5] \textbf{鼻音簇缩减}：相邻两鼻音中，居后的/n/或/ŋ/删除，腭鼻音/ɲ/不删除\footnote{/ɲ/豁免可能因为它是2\textsc{pl}/3\textsc{pl}的唯一语音体现。}：
+    \[ \text{n, ŋ}\rightarrow\emptyset\ \;/\;\ [+\text{nasal}]\,\rule[2pt]{1em}{0.4pt} \]
+    \item[P6] \textbf{咝音前缩减}：齿龈音/s, t, n/在/ʃ/前删除\footnote{依规则同时施用的约定\parencite{Chomsky1968-sp}，本规则对 /nsʃ/ 一类序列只删除紧邻 /ʃ/ 的 /s/，不会连带删除其左侧、当时尚不与 /ʃ/ 相邻的 /n/（详见下文 /-s/+/-nʃ/ 的推导）。}：
+    \[ \text{s, t, n}\rightarrow\emptyset\ \;/\;\ \rule[2pt]{1em}{0.4pt}\,\text{ʃ} \]
+    \item[P7] \textbf{去鼻化}：双唇鼻音/m/在/j/前变为同部位爆发音/p/：
+    \[ \text{m}\rightarrow\text{p}\ \;/\;\ \rule[2pt]{1em}{0.4pt}\,\text{j} \]
+    \item[P8] \textbf{/ɲ/滑音化}：腭鼻音/ɲ/在/s/前变为同部位滑音/j/：
+    \[ \text{ɲ}\rightarrow\text{j}\ \;/\;\ \rule[2pt]{1em}{0.4pt}\,\text{s} \]
+\end{enumerate}
+
+八条规则按 P1 $\gg$ P2 $\gg$ P3 $\gg$ P4 $\gg$ P5 $\gg$ P6 $\gg$ P7 $\gg$ P8 的次序运用。按照\textcite{Kiparsky1968-fb}的分类，若规则$A$的输出为规则$B$创造新的可施用环境且$A$先于$B$，二者构成馈给（feeding）；若$A$摧毁$B$的环境且$A$先于$B$，则构成榨取（bleeding）。当本应馈给/榨取的规则反被排在后面时，相应地构成逆馈（counterfeeding）与逆榨（counterbleeding），并在表层留下不透明性（opacity）\parencite{Kiparsky1973-op,mccarthy2007hidden}。米亚罗话复辅音韵尾的推导中，上述四种交互类型均有体现：
+
+\begin{itemize}
+    \item P1榨取P4：P1删除2\textsc{sg}后缀/n/，从而移除了P4鼻化所需的鼻音触发环境。由于P1先于P4，闭音节动词的2\textsc{sg}形式不发生鼻化，如/-k/+/-n/ $\rightarrow$ [-k]。
+    \item P3馈给P8：P8要求/ɲ/紧邻其后的/s/，而这一相邻关系需要由P3的咝音换位创造。P3先于P8，因此例如/-s/+/-ɲ/才能顺利推导为 [-js]。
+    \item P5逆榨P4：在/-ps/+/-nʃ/中，P4须借助居中的/n/把/p/鼻化为/m/，其后P5又删去这个/n/，导致了表层的不透明性。如果颠倒次序先删/n/，则/p/失去鼻化条件，错误地得到$^*$[-pʃ]。
+    \item 逆馈：P2使/p/在/j/前弱化为/w/，以及P7使/m/在/j/前变为/p/两条规则，在与其他规则互动时有一些逆馈的例子：
+    \begin{itemize}
+        \item P3逆馈P2：/-ps/+/-j/底层/-psj/中/p/与/j/要P3换位后才相邻，但P3排在P2之后，所以/p/保留，输出[-pjs]而非$^*$[-wjs]。
+        \item P8逆馈P7：/-ps/+/-ɲ/中，P8把/ɲ/滑音化为/j/，使前面经P4鼻化而来的/m/处于/j/前。由于P8排在P7之后，因此不会经过P7变为[p]，而是输出[-mjs]。
+    \end{itemize}
+\end{itemize}
+
+表\ref{coda-derivation}以五个组合为例展示完整推导。每一栏自上而下依次列出底层形式、各规则施用后的中间形式（不适用为“---”）以及表层形式。
+
+\begin{table}[H]
+\vspace{5pt}
+    \centering
+    \caption{复辅音韵尾形态音系过程推导示例}
+    \label{coda-derivation}
+\begin{tabular}{l|ccccc}
+\toprule
+            & /-s/+/-ŋ/ & /-k/+/-nʃ/ & /-ps/+/-nʃ/ & /-ps/+/-ɲ/ & /-ms/+/-j/ \\
+\midrule
+底层形式      & -sŋ   & -knʃ  & -psnʃ  & -psɲ  & -msj  \\
+P1 删除2\textsc{sg}后缀 & ---   & ---   & ---    & ---   & ---   \\
+P2 j前调整   & ---   & ---   & ---  & ---  & ---  \\
+P3 咝音换位   & -ŋs   & ---  & -pnsʃ  & -pɲs  & -mjs   \\
+P4 爆发音鼻化 & ---   & -ŋnʃ   & -mnsʃ    & -mɲs   & ---   \\
+P5 鼻音簇缩减 & ---   & -ŋʃ   & -msʃ    & ---   & ---   \\
+P6 咝音前缩减   & ---   & ---   & -mʃ    & ---  & ---   \\
+P7 去鼻化   & ---   & ---   & ---    & ---   & -pjs  \\
+P8 ɲ滑音化 & ---   & ---   & ---    & -mjs   & ---   \\
+\midrule
+表层形式      & [-ŋs] & [-ŋʃ] & [-mʃ]  & [-mjs]& [-pjs]\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+值得注意的一组是，/-ps/+/-ɲ/ 与 /-ms/+/-j/在推导途中都经过同一中间形式/-mjs/，表层却分别实现为[-mjs]与[-pjs]。在/-ms/+/-j/中它由P3换位较早派生，因而可以经历P7去鼻化/m/变/p/；而/-ps/+/-ɲ/中要等到P8滑音化才出现，此时已错过P7，故/m/得以保留。这进一步证明P7与P8两个规则存在先后顺序，如果P8在P7之前，则/-ps/+/-ɲ/将与/-ms/+/-j/一样表现为$^*$[-pjs]。
