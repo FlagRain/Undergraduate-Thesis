@@ -30,7 +30,7 @@
     % 中文关键词列表
     % 使用英文半角逗号(,)分隔
     %
-    keywords* = {rGyalrong,Situ,Myag-lo,Phonology},
+    keywords* = {rGyalrong Languages,Situ rGyalrong,Myag-lo Dialect,Phonology},
     % 英文关键词
     % 使用英文半角逗号(,)分隔
     %
@@ -63,7 +63,7 @@
     % 第二导师全称
     % 如果确实没有第二导师，不填写即可
     %
-    submit-date = {2026-05-27},
+    submit-date = {2026-06-07},
     % 提交日期
     % 格式为 yyyy-mm-dd
     % 不填就是编译当天日期
